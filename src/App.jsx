@@ -5,7 +5,16 @@ import About from './components/about'
 function App() {
   return (
     <>
-    
+      <div className="heading">
+        <h1>
+          DHRUVAL KHARSHIKAR
+        </h1>
+        <p>
+          My Portfolio
+        </p>
+      </div>
+      <Omnitrix />
+      <About />
     </>
   )
 }
