@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react'
-import omnitrix_ring from '../assets/omnitrix-final.png'
+import omnitrix_ring from '../assets/omnitrix-f2.png'
 import omnitrix_audio from '../assets/omnitrix_in.mp3'
 import omnitrix_click from '../assets/omnitrix_click.mp3' 
 import omnitrix_transform from '../assets/omnitrix_transform.mp3'
@@ -13,7 +13,9 @@ function Omnitrix() {
 
   const [colour, setColour] = useState("black")
 
-  const [size, setSize] = useState("29em")
+  const [size, setSize] = useState("30em")
+
+  const [flag, setFlag] = useState(false)
 
   const audioref = useRef(new Audio(omnitrix_audio))
   const transformaudioref = useRef(new Audio(omnitrix_transform))
@@ -57,12 +59,14 @@ function Omnitrix() {
   }
 
 
+
   const open = ()=> {
     if(colour == 'black') {
       return
     }
     transformAudio()
     setSize("300vh")
+    setFlag(true)
   }
 
 
@@ -71,6 +75,11 @@ function Omnitrix() {
       <div className="home-omnitrix">
           <div className='omnitrix-ring-wrap' >
             <div className="omnitrix-img" onClick={rotate}
+            style={
+              {
+                
+              }
+            }
             >
               <img className="omn" src={omnitrix_ring} alt="" 
               style={{
@@ -78,12 +87,15 @@ function Omnitrix() {
               }}
               />
             </div>
-            <div className="circle" style={{
-              backgroundColor : `${colour}`,
-              boxShadow : `0 0 400px ${colour}`,
-              height : `${size}`,
-              width : `${size}`
-            }}></div>
+            <div className="circle" style={
+              {
+                zIndex : flag?100:-1,
+                backgroundColor : `${colour}`,
+                boxShadow : `0 0 400px ${colour}`,
+                height : `${size}`,
+                width : `${size}`
+              }
+            }></div>
             <div className='logo-wrap'>
               <img data-layer="Source Code" className="SourceCode" src={Logos("code")}  
               style={
@@ -108,6 +120,10 @@ function Omnitrix() {
             <button onClick={open}
             style={colour=='black'?{opacity : 0}:{opacity : 1}}>It's Hero Time</button>
           </div>
+        </div>
+        <div className="skills"
+        style={flag?{opacity : 1}:{opacity : 0}}>
+          hello
         </div>
     </>
   )
