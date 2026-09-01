@@ -73,7 +73,11 @@ body{
 
 .logo-wrap{
     position: relative;
-    img{
+    div{
+        display : flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
         position: absolute;
         top: 50%;
         left: 50%;
@@ -82,14 +86,22 @@ body{
     }
 }
 .SourceCode{
-    opacity: 0;
 }
 .Brain{
-    opacity: 0;
 }
 .Certificate{
-    opacity: 0;
 }
 .Users{
-    opacity: 0;
+}
+.skills{
+    transition: 2s ease;
+}
+.certificate{
+    transition:2s ease;
+}
+.projects{
+    transition:2s ease;
+}
+.contacts{
+    transition:2s ease;
 }
