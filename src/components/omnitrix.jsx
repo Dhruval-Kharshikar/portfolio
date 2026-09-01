@@ -1,23 +1,114 @@
-import React from 'react'
-import omnitrix_ring from '../assets/omnitrix_ring.png'
+import { useState, useRef } from 'react'
+import omnitrix_ring from '../assets/omnitrix-final.png'
+import omnitrix_audio from '../assets/omnitrix_in.mp3'
+import omnitrix_click from '../assets/omnitrix_click.mp3' 
+import omnitrix_transform from '../assets/omnitrix_transform.mp3'
 import Logos from './logos';
+import './omnitrix.css'
 
 
 function Omnitrix() {
+
+  const [rotation , setRotation] = useState(0)
+
+  const [colour, setColour] = useState("black")
+
+  const [size, setSize] = useState("29em")
+
+  const audioref = useRef(new Audio(omnitrix_audio))
+  const transformaudioref = useRef(new Audio(omnitrix_transform))
+  
+  const playAudio = ()=>{
+    audioref.current.play()
+  }
+
+  const playClickAudio = ()=>{
+    const clickaudioref = new Audio(omnitrix_click)
+    clickaudioref.play()
+  }
+
+  const transformAudio = ()=>{
+    transformaudioref.current.play()
+  }
+
+  const rotate = ()=>{
+    
+    if(colour == "black"){
+      playAudio()
+      setColour('#7bd71f')
+    }
+    else if(colour == "#7bd71f"){
+      playClickAudio()
+      setRotation(rotation + 90)
+      setColour("red")
+    }else if(colour == "red"){
+      playClickAudio()
+      setRotation(rotation + 90)
+      setColour("yellow")
+    }else if(colour == 'yellow'){
+      playClickAudio()
+      setRotation(rotation + 90)
+      setColour("dodgerblue")
+    }else if(colour == 'dodgerblue'){
+      playClickAudio()
+      setRotation(rotation + 90)
+      setColour('#7bd71f')
+    }
+  }
+
+
+  const open = ()=> {
+    if(colour == 'black') {
+      return
+    }
+    transformAudio()
+    setSize("300vh")
+  }
+
+
   return (
     <>
-      <div className='omnitrix-ring-wrap'>
-        <img src={omnitrix_ring} alt="" />
-        <div className="circle"></div>
-        <img data-layer="Source Code" className="SourceCode" src={Logos("code")} />
-        <img data-layer="Brain" className="Brain" src={Logos("brain")} />
-        <img data-layer="Certificate" className="Certificate" src={Logos("badge")} />
-        <img data-layer="Users" className="Users" src={Logos("contacts")} />
-      </div>
+      <div className="home-omnitrix">
+          <div className='omnitrix-ring-wrap' >
+            <div className="omnitrix-img" onClick={rotate}
+            >
+              <img className="omn" src={omnitrix_ring} alt="" 
+              style={{
+                transform : `rotate(${rotation}deg)`
+              }}
+              />
+            </div>
+            <div className="circle" style={{
+              backgroundColor : `${colour}`,
+              boxShadow : `0 0 400px ${colour}`,
+              height : `${size}`,
+              width : `${size}`
+            }}></div>
+            <div className='logo-wrap'>
+              <img data-layer="Source Code" className="SourceCode" src={Logos("code")}  
+              style={
+                colour == '#7bd71f' ? {opacity : 1} : {display : 'none'}
+              }/>
+              <img data-layer="Brain" className="Brain" src={Logos("brain")} 
+              style={
+                colour == 'red' ? {opacity : 1} : {display : 'none'}
+              }/>
+              <img data-layer="Certificate" className="Certificate" src={Logos("badge")} 
+              style={
+                colour == 'yellow' ? {opacity : 1} : {display : 'none'}
+              }/>
+              <img data-layer="Users" className="Users" src={Logos("contacts")} 
+              style={
+                colour == 'dodgerblue' ? {opacity : 1} : {display : 'none'}
+              }/>
+            </div>
+          </div>
 
-      <div className="button">
-        <button>It's Hero Time</button>
-      </div>
+          <div className="button">
+            <button onClick={open}
+            style={colour=='black'?{opacity : 0}:{opacity : 1}}>It's Hero Time</button>
+          </div>
+        </div>
     </>
   )
 }
