@@ -1,5 +1,9 @@
 body{
     overflow: hidden;
+    font-family: monospace;
+}
+.home-omnitrix{
+    /* transition: all 2s linear ; */
 }
 .omnitrix-ring-wrap{
     position: relative;
@@ -56,6 +60,7 @@ body{
     left: 70%;
     button{
         /* transition: opacity 1s ease; */
+        font-family: monospace;
         transition: 0.3s ease ;
         cursor: pointer;
         padding: 4em 1em;
@@ -94,14 +99,46 @@ body{
 .Users{
 }
 .skills{
-    transition: 2s ease;
+    font-weight: bold;
+    font-size: 10rem;
+    font-family: sans-serif;
+    transition: 1s ease-in;
+    background-color: rgb(0, 0, 0);
+    color :#7bd71f;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
 }
 .certificate{
-    transition:2s ease;
+    font-weight: bold;
+    font-size: 10rem;
+    font-family: sans-serif;
+    transition: 1s ease-in;
+    background-color: rgb(0, 0, 0);
+    color :#7bd71f;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
 }
 .projects{
-    transition:2s ease;
+    font-weight: bold;
+    font-size: 10rem;
+    font-family: sans-serif;
+    transition: 1s ease-in;
+    background-color: rgb(0, 0, 0);
+    color :#7bd71f;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
 }
 .contacts{
-    transition:2s ease;
+    font-weight: bold;
+    font-size: 10rem;
+    font-family: sans-serif;
+    transition: 1s ease-in;
+    background-color: rgb(0, 0, 0);
+    color :#7bd71f;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
 }

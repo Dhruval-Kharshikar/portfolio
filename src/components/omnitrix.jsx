@@ -82,13 +82,7 @@ function Omnitrix() {
     }>
       <div className="home-omnitrix">
           <div className='omnitrix-ring-wrap' >
-            <div className="omnitrix-img" onClick={rotate}
-            style={
-              {
-                
-              }
-            }
-            >
+            <div className="omnitrix-img" onClick={rotate} >
               <img className="omn" src={omnitrix_ring} alt="" 
               style={{
                 transform : `rotate(${rotation}deg)`
