@@ -6,6 +6,7 @@
 body{
     font-family: monospace;
     background-color: rgb(3, 33, 2);
+    overflow-x: hidden;
 }
 
 .heading{
@@ -21,11 +22,12 @@ body{
     }
 }
 .app-main{
+    height: 100%;
+    position: relative;
     /* opacity: 0; */
     /* display: block; */
 }
 .app-loader{
-    /* border: 2px solid white; */
     width: 100vw;
     height : 100vh;
     position: relative;
@@ -48,6 +50,28 @@ body{
         }
     }
 }
+.opvpar{
+    position: absolute;
+    top: 0;
+    z-index: 111;
+}
+
+.pages{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.pages > *{
+    z-index: 111;
+    animation: fade 2s forwards;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+}
 
 @keyframes loader-spin {
     0%{
@@ -56,4 +80,18 @@ body{
     100%{
         rotate: 360deg;
     }
+}
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.hi{
+    position: sticky;
+    color: white;
+    z-index: 111;
+    /* top: 0; */
 }
