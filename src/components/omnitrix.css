@@ -1,13 +1,8 @@
 body{
-    /* overflow: hidden; */
     font-family: monospace;
-}
-.home-omnitrix{
-    /* transition: all 2s linear ; */
 }
 .omnitrix-ring-wrap{
     position: relative;
-    /* border: 2px solid; */
     width: 100%;
     height: 70vh;
     .omn{
@@ -29,20 +24,15 @@ body{
     z-index: 2;
     img{
         transition: 0.4s ease;
-        /* border : 2px solid; */
     }
     transition: 0.4s ease;
-    /* border : 2px solid; */
 }
 .circle{
-    /* width: 29em; */
     border-radius: 50%;
     
-    /* height : 29em; */
     background-color: #7bd71f;
     position: absolute;
     z-index: -1;
-    /* box-shadow: 0 0 100px white ; */
     transition: 0.7s all ease;
     
 }
@@ -59,7 +49,6 @@ body{
     top : 50%;
     left: 70%;
     button{
-        /* transition: opacity 1s ease; */
         font-family: monospace;
         transition: 0.3s ease ;
         cursor: pointer;
@@ -69,7 +58,6 @@ body{
         border: none;
         font-weight: bold;
         font-size: 0.7em;
-        /* visibility: ; */
     }
 }
 .button > button:hover{
@@ -89,57 +77,4 @@ body{
         transform: translate(-50%,-50%);
         transition: opacity 1s ease;
     }
-}
-.SourceCode{
-}
-.Brain{
-}
-.Certificate{
-}
-.Users{
-}
-.skills{
-    font-weight: bold;
-    font-size: 10rem;
-    font-family: sans-serif;
-    transition: 1s ease-in;
-    background-color: rgb(0, 0, 0);
-    color :#7bd71f;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-}
-.certificate{
-    font-weight: bold;
-    font-size: 10rem;
-    font-family: sans-serif;
-    transition: 1s ease-in;
-    background-color: rgb(0, 0, 0);
-    color :#7bd71f;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-}
-.projects{
-    z-index: 1000000;
-    font-weight: bold;
-    font-size: 10rem;
-    font-family: sans-serif;
-    transition: 1s ease-in;
-    background-color: rgb(0, 0, 0);
-    color :#7bd71f;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-}
-.contacts{
-    font-weight: bold;
-    font-size: 10rem;
-    font-family: sans-serif;
-    transition: 1s ease-in;
-    background-color: rgb(0, 0, 0);
-    color :#7bd71f;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
 }

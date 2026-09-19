@@ -10,25 +10,6 @@ import Contacts from './components/contacts'
 
 function App() {
 
-  // const [scale, useScale] = useState(true)
-  // const [fade, useFade] = useState(true)
-
-  // useEffect(()=>{
-  //   const timer = setTimeout(() => {
-  //     useScale(false)
-  //   }, 3000)
-
-  //   return () => clearTimeout(timer)
-  // }, [])
-
-  // useEffect(()=>{
-  //   const faded = setTimeout(() => {
-  //     useFade(false)
-  //   }, 3010)
-
-  //   return () => clearTimeout(faded)
-  // })
-
   const [opv, setOpv] = useState(0)
   const [size, setSize] = useState("30em")
   const [flag, setFlag] = useState(false)
@@ -64,18 +45,6 @@ function App() {
           <div className='hi'>hi</div>
         <About />
       </div>
-
-      {/* <div className="app-loader" style={
-        fade?{display : 'block'} : {display : 'none'}
-      }>
-        <div className="loader-img">
-          <img src={loader} alt="" 
-            style={
-              scale?{transform : `scale(${1})`} : {transform  : `scale(${300})`, opacity : 0}
-            }
-          />
-        </div>
-      </div> */}
     </>
   )
 }

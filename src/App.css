@@ -38,14 +38,12 @@ body{
         transform: translate(-50%, -50%);
         width: 50px;
         height : 100px;
-        /* border: 2px solid; */
         img{
             box-shadow: 0 0 50px #7bd71f;
             border-radius: 50%;
             width: 100%;
             background-size: cover;
             animation: loader-spin 1s linear 3;
-            /* animation-iteration-count: 3; */
             transition: 1s all linear;
         }
     }
@@ -93,5 +91,4 @@ body{
     position: sticky;
     color: white;
     z-index: 111;
-    /* top: 0; */
 }
