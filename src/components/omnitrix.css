@@ -1,5 +1,5 @@
 body{
-    overflow: hidden;
+    /* overflow: hidden; */
     font-family: monospace;
 }
 .home-omnitrix{
@@ -121,6 +121,7 @@ body{
     padding: 0;
 }
 .projects{
+    z-index: 1000000;
     font-weight: bold;
     font-size: 10rem;
     font-family: sans-serif;

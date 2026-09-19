@@ -11,15 +11,11 @@ import Projects from './projects';
 import Contacts from './contacts';
 
 
-function Omnitrix() {
+function Omnitrix({opvalue, setSize, size, setFlag, flag}) {
 
   const [rotation , setRotation] = useState(0)
 
   const [colour, setColour] = useState("black")
-
-  const [size, setSize] = useState("30em")
-
-  const [flag, setFlag] = useState(false)
 
   const audioref = useRef(new Audio(omnitrix_audio))
   const transformaudioref = useRef(new Audio(omnitrix_transform))
@@ -71,6 +67,10 @@ function Omnitrix() {
     transformAudio()
     setSize("300vh")
     setFlag(true)
+    if(colour == '#7bd71f') opvalue(1)
+    else if(colour == 'red') opvalue(2)
+    else if(colour == 'yellow') opvalue(3)
+    else if(colour == 'dodgerblue') opvalue(4)
   }
 
 
@@ -131,19 +131,6 @@ function Omnitrix() {
                 <img data-layer="Users" className="Users" src={Logos("contacts")} />
                 <h1>Contacts</h1>
               </div>
-
-              {/* <img data-layer="Brain" className="Brain" src={Logos("brain")} 
-              style={
-                colour == 'red' ? {opacity : 1} : {display : 'none'}
-              }/>
-              <img data-layer="Certificate" className="Certificate" src={Logos("badge")} 
-              style={
-                colour == 'yellow' ? {opacity : 1} : {display : 'none'}
-              }/> */}
-              {/* <img data-layer="Users" className="Users" src={Logos("contacts")} 
-              style={
-                colour == 'dodgerblue' ? {opacity : 1} : {display : 'none'}
-              }/> */}
             </div>
           </div>
 
@@ -151,50 +138,6 @@ function Omnitrix() {
             <button onClick={open}
             style={colour=='black'?{opacity : 0}:{opacity : 1}}>It's Hero Time</button>
           </div>
-        </div>
-        <div className="skills"
-        style={
-          {
-            top : '0',
-            position : 'absolute',
-            opacity : (flag && rotation == 0)?1:0,
-            zIndex : flag?1000:-1,
-          }
-        }>
-          <Skills />
-        </div>
-        <div className="certificate"
-        style={
-          {
-            top : '0',
-            position : 'absolute',
-            opacity : (flag && rotation == 90*2)?1:0,
-            zIndex : flag?1000:-1,
-          }
-        }>
-          <Certifications />
-        </div>
-        <div className="projects"
-        style={
-          {
-            top : '0',
-            position : 'absolute',
-            opacity : (flag && rotation == 90)?1:0,
-            zIndex : flag?1000:-1,
-          }
-        }>
-          <Projects />
-        </div>
-        <div className="contacts"
-        style={
-          {
-            top : '0',
-            position : 'absolute',
-            opacity : (flag && rotation == 270)?1:0,
-            zIndex : flag?1000:-1,
-          }
-        }>
-          <Contacts />
         </div>
     </div>
   )
