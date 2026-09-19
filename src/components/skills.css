@@ -1,9 +1,9 @@
-.skills-body{
+.sk-body{
     position: relative;
-    top : -1.3em;
-    height: 100vh;
+    height: 250vh;
+    width: 100vw;
     z-index: 100;
-    background-color: #7bd71f;
+    background-color: rgba(131, 0, 0, 0);
 }
 .sk-heading{
     font-size: 10rem;
@@ -12,6 +12,20 @@
     background-color: rgb(0, 0, 0);
     color :#7bd71f;
     width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     margin: 0;
-    padding: 0;
+    padding: 0 0.2em;
+}
+
+.sk-btn{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color:#7bd71f;
+    font-weight: bold;
+}
+.sk-btn:hover{
+    color: #498a08;
 }

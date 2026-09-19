@@ -1,9 +1,9 @@
 .projects{
     position: relative;
-    top : -1.3em;
-    height: 100vh;
+    height: 250vh;
+    width: 100vw;
     z-index: 100;
-    background-color: red;
+    background-color: rgba(131, 0, 0, 0);
 }
 .pr-heading{
     font-size: 10rem;
@@ -12,6 +12,20 @@
     background-color: rgb(0, 0, 0);
     color :red;
     width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     margin: 0;
-    padding: 0;
+    padding: 0 0.2em;
+}
+
+.btn{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color:red;
+    font-weight: bold;
+}
+.btn:hover{
+    color: maroon;
 }

@@ -1,7 +1,7 @@
-.contacts{
+.con-body{
     position: relative;
-    top : -1.3em;
-    height: 100vh;
+    height: 250vh;
+    width: 100vw;
     z-index: 100;
     background-color: dodgerblue;
 }
@@ -12,6 +12,20 @@
     background-color: rgb(0, 0, 0);
     color :dodgerblue;
     width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
     margin: 0;
-    padding: 0;
+    padding: 0 0.2em;
+}
+
+.co-btn{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color:dodgerblue;
+    font-weight: bold;
+}
+.co-btn:hover{
+    color: rgb(2, 81, 160);
 }
