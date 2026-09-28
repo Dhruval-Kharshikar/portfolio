@@ -1,0 +1,27 @@
+.introduction{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border: 2px solid white;
+    position: relative;
+    transition: all 0.9s ease ;
+}
+
+#introduction{
+    cursor: pointer;
+    color: lime;
+    font-size: 17em;
+    transition: all 1s ease;
+}
+#introduction:hover{
+    text-shadow: 0 0 26px green;
+}
+#intro-para{
+    color: green;
+    padding: 1em;
+    text-align: center;
+    position: inherit;
+    font-size: 1.6em;
+    transition: all 0.4s ease;
+}

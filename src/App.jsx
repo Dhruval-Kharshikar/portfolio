@@ -34,16 +34,20 @@ function App() {
         </div>
       <div className='app-main'>
         <div className="heading">
+
           <h1>
             DHRUVAL KHARSHIKAR
           </h1>
           <p>
             My Portfolio
           </p>
+
         </div>
+
         <Omnitrix opvalue = {setOpv} setSize = {setSize} size = {size} setFlag = {setFlag} flag = {flag}/>
-          <div className='hi'>hi</div>
+
         <About />
+
       </div>
     </>
   )
