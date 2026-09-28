@@ -1,9 +1,9 @@
-.sk-body{
+.skills-body{
     position: relative;
     height: 250vh;
     width: 100vw;
     z-index: 100;
-    background-color: rgba(131, 0, 0, 0);
+    background-color: #7bd71f;
 }
 .sk-heading{
     font-size: 10rem;

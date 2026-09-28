@@ -3,7 +3,7 @@
     height: 250vh;
     width: 100vw;
     z-index: 100;
-    background-color: rgba(131, 0, 0, 0);
+    background-color: rgba(131, 0, 0);
 }
 .pr-heading{
     font-size: 10rem;
