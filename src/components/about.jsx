@@ -3,6 +3,23 @@ import './about.css'
 
 function About() {
   const [fn, setFn] = useState(false)
+
+  let txt = `Lorem ipsum dummy text blabla. 
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quas similique atque officiis possimus voluptate modi minima soluta doloremque illo molestiae numquam eos, deserunt reprehenderit nesciunt reiciendis. Qui, eligendi dignissimos.`;
+  var speed = 20;
+  const [finalText, setFinalText] = useState("")
+  let i = 0;
+  let temp = ""
+  
+  function typeWriter() {
+    if( i < txt.length){
+      temp += txt.charAt(i)
+      setFinalText(temp)
+      i++
+    }
+    setTimeout(typeWriter, speed)
+
+  }
   return (
     <div>
         <div className="introduction" style={
@@ -11,7 +28,11 @@ function About() {
           }
         }>
 
-          <h2 id='introduction' onClick={()=>{(fn)?(setFn(false)):(setFn(true))}} style={
+          <h2 id='introduction' onClick={()=>{
+            (fn)?(setFn(false)):(setFn(true), typeWriter())
+            // typeWriter()
+          }} 
+          style={
             {
               fontSize : fn?'10em':'17em'
 
@@ -22,12 +43,10 @@ function About() {
             {
               opacity : fn?1:0,
               zIndex : fn?0:-1
-              // position : fn?'inherit':'absolute',
-              // top : fn?'0':'17em'
             }
           }>
             <span id='first'>Hi!</span> <span id='second'>My name is Dhruval Kharshikar</span>
-            <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium nihil earum, provident at maxime ut, error hic consectetur odio quibusdam dicta quo praesentium sapiente! Nemo architecto pariatur sapiente consectetur. Vel. <br />  <br />Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magni libero necessitatibus voluptate et sint. Similique enim neque rem voluptatem vel quam dolore? Aspernatur laudantium sint iste esse quidem perferendis rem! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Porro sit odio dolorum! Atque eius nulla neque perferendis dolores saepe tempore asperiores. Veniam animi rem magnam dolor quo inventore provident nam! <br /> <br />Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dignissimos enim temporibus odit tempore iure architecto deserunt, deleniti ut modi. Tempora non ab tenetur, voluptas sapiente magnam? Optio natus error enim?</span>
+            <p>{finalText}</p>
           </p>
 
         </div>
@@ -35,6 +54,7 @@ function About() {
           <h2>EDUCATION</h2>
           <p></p>
         </div>
+
     </div>
   )
 }
