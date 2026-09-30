@@ -8,7 +8,9 @@ function About() {
   const introref = useRef(null)
 
   let txt = `Lorem ipsum dummy text blabla. 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quas similique atque officiis possimus voluptate modi minima soluta doloremque illo molestiae numquam eos, deserunt reprehenderit nesciunt reiciendis. Qui, eligendi dignissimos.`;
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quas similique atque officiis possimus voluptate modi minima soluta doloremque illo molestiae numquam eos.
+        
+        deserunt reprehenderit nesciunt reiciendis. Qui, eligendi dignissimos.`;
   var speed = 20;
   const [finalText, setFinalText] = useState("")
   
@@ -74,7 +76,6 @@ function About() {
               zIndex : fn?0:-1
             }
           }>
-            <span id='first'>Hi!</span> <span id='second'>My name is Dhruval Kharshikar</span>
             <p>{finalText}</p>
           </p>
 

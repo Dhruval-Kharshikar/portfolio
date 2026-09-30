@@ -1,11 +1,13 @@
+
 .introduction{
+    margin-top: 5em;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    border: 2px solid white;
     position: relative;
     transition: all 0.9s ease ;
+    margin-bottom: 200em;
 }
 
 #introduction{
@@ -18,6 +20,8 @@
     text-shadow: 0 0 26px green;
 }
 #intro-para{
+    width: 100%;
+    white-space: pre-line;
     color: green;
     padding: 1em;
     text-align: left;
