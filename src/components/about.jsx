@@ -5,6 +5,7 @@ import appear from '../assets/text-appear.wav'
 
 function About() {
   const [fn, setFn] = useState(false)
+  const introref = useRef(null)
 
   let txt = `Lorem ipsum dummy text blabla. 
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quas similique atque officiis possimus voluptate modi minima soluta doloremque illo molestiae numquam eos, deserunt reprehenderit nesciunt reiciendis. Qui, eligendi dignissimos.`;
@@ -15,7 +16,7 @@ function About() {
   const appearAudio = useRef(null)
 
   if(!appearAudio.current){
-    appearAudio.current = new Audio(beep)
+    appearAudio.current = new Audio(appear)
   }
   // const beepAudio = new Audio(beep)
   
@@ -47,12 +48,18 @@ function About() {
           }
         }>
 
-          <h2 id='introduction' onClick={()=>{
+          <h2 id='introduction'
+          ref = {introref}
+           onClick={()=>{
             (fn)?(setFn(false)):(setFn(true), typeWriter())
             appearAudio.current.pause()
             appearAudio.current.currentTime = 0
             appearAudio.current.play()
-            // typeWriter()
+
+            introref.current.scrollIntoView({
+              behaviour : "smooth",
+              block : "start"
+            }, 100)
           }} 
           style={
             {
