@@ -135,7 +135,13 @@ function Omnitrix({opvalue, setSize, size, setFlag, flag}) {
           </div>
 
           <div className="button">
-            <button onClick={open}
+            <button onClick={()=>{open(),
+              window.scrollTo({
+                top : 0,
+                behavior : 'smooth'
+              })
+
+            }}
             style={colour=='black'?{opacity : 0}:{opacity : 1}}>It's Hero Time</button>
           </div>
         </div>
