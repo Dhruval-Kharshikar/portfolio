@@ -12,7 +12,11 @@ function About() {
   const [finalText, setFinalText] = useState("")
   
   const timer = useRef(null)
-  const appearAudio = useRef(new Audio(appear))
+  const appearAudio = useRef(null)
+
+  if(!appearAudio.current){
+    appearAudio.current = new Audio(beep)
+  }
   // const beepAudio = new Audio(beep)
   
   function typeWriter() {
@@ -45,8 +49,9 @@ function About() {
 
           <h2 id='introduction' onClick={()=>{
             (fn)?(setFn(false)):(setFn(true), typeWriter())
+            appearAudio.current.pause()
             appearAudio.current.currentTime = 0
-            appearAudio.play()
+            appearAudio.current.play()
             // typeWriter()
           }} 
           style={
