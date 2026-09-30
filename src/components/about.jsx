@@ -1,5 +1,7 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './about.css'
+import beep from '../assets/typing_beep.mp3'
+import appear from '../assets/text-appear.wav'
 
 function About() {
   const [fn, setFn] = useState(false)
@@ -8,18 +10,31 @@ function About() {
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quas similique atque officiis possimus voluptate modi minima soluta doloremque illo molestiae numquam eos, deserunt reprehenderit nesciunt reiciendis. Qui, eligendi dignissimos.`;
   var speed = 20;
   const [finalText, setFinalText] = useState("")
-  let i = 0;
-  let temp = ""
+  
+  const timer = useRef(null)
+  const appearAudio = useRef(new Audio(appear))
+  // const beepAudio = new Audio(beep)
   
   function typeWriter() {
-    if( i < txt.length){
-      temp += txt.charAt(i)
-      setFinalText(temp)
-      i++
-    }
-    setTimeout(typeWriter, speed)
+    
+    clearTimeout(timer.current)
+    let temp = ""
+    let i = 0
 
+    function write(){
+
+
+      if( i < txt.length && !fn){
+        temp += txt.charAt(i)
+        setFinalText(temp)
+        i++
+        timer.current = setTimeout(write, speed)
+        
+      }
+    }
+    write()
   }
+
   return (
     <div>
         <div className="introduction" style={
@@ -30,6 +45,8 @@ function About() {
 
           <h2 id='introduction' onClick={()=>{
             (fn)?(setFn(false)):(setFn(true), typeWriter())
+            appearAudio.current.currentTime = 0
+            appearAudio.play()
             // typeWriter()
           }} 
           style={
