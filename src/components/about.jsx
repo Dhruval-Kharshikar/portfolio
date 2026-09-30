@@ -57,9 +57,9 @@ function About() {
             appearAudio.current.play()
 
             introref.current.scrollIntoView({
-              behaviour : "smooth",
+              behavior : "smooth",
               block : "start"
-            }, 100)
+            })
           }} 
           style={
             {
