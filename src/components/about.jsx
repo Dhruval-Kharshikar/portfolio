@@ -7,10 +7,13 @@ function About() {
   const [fn, setFn] = useState(false)
   const introref = useRef(null)
 
-  let txt = `Lorem ipsum dummy text blabla. 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel quas similique atque officiis possimus voluptate modi minima soluta doloremque illo molestiae numquam eos.
-        
-        deserunt reprehenderit nesciunt reiciendis. Qui, eligendi dignissimos.`;
+  let txt = `I’m Dhruval Kharshikar, a passionate Computer Science and Engineering student at Parul University, driven by curiosity and creativity in building digital experiences. 
+  
+  With hands-on skills in Java, Python, and JavaScript, I focus on crafting efficient solutions through data structures, algorithms, and modern web development. 
+  
+  My projects—from interactive scoring platforms to responsive UI designs—reflect my commitment to clean code, user-centric design, and continuous learning. 
+  
+  I’m currently expanding my expertise in MERN Stack and the SQL to develop dynamic, full‑stack applications that merge functionality with innovation.`;
   var speed = 20;
   const [finalText, setFinalText] = useState("")
   

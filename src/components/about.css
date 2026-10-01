@@ -7,24 +7,24 @@
     flex-direction: column;
     position: relative;
     transition: all 0.9s ease ;
-    margin-bottom: 200em;
+    margin-bottom: 1em;
 }
 
 #introduction{
     cursor: pointer;
     color: lime;
     font-size: 17em;
-    transition: all 1s ease;
+    transition: all 0.5s ease;
 }
 #introduction:hover{
-    text-shadow: 0 0 26px green;
+    text-shadow: 0 0 45px rgb(0, 171, 0);
 }
 #intro-para{
     width: 100%;
     white-space: pre-line;
     color: green;
     padding: 1em;
-    text-align: left;
+    text-align: center;
     position: inherit;
     font-size: 1.6em;
     transition: all 0.4s ease;
