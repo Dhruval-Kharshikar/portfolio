@@ -1,8 +1,7 @@
 import './App.css'
 import Omnitrix from './components/omnitrix'
 import About from './components/about'
-import loader from '../src/assets/omnitrix-loader.png'
-import { use, useEffect, useState } from 'react'
+import { useState } from 'react'
 import Projects from './components/projects'
 import Skills from './components/skills'
 import Certifications from './components/certifications'
@@ -33,7 +32,7 @@ function App() {
             </div>
         </div>
       <div className='app-main'>
-        <div className="heading">
+          <div className="heading">
 
           <h1>
             DHRUVAL KHARSHIKAR
