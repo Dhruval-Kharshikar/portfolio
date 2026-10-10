@@ -1,14 +1,11 @@
-import { useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
+import { useNavigate } from 'react-router-dom'
 import omnitrix_ring from '../assets/omnitrix-f2.png'
 import omnitrix_audio from '../assets/omnitrix_in.mp3'
 import omnitrix_click from '../assets/omnitrix_click.mp3' 
 import omnitrix_transform from '../assets/omnitrix_transform.mp3'
 import Logos from './logos';
 import './omnitrix.css'
-import Skills from './skills';
-import Certifications from './certifications';
-import Projects from './projects';
-import Contacts from './contacts';
 
 
 function Omnitrix({opvalue, setSize, size, setFlag, flag}) {
@@ -16,9 +13,18 @@ function Omnitrix({opvalue, setSize, size, setFlag, flag}) {
   const [rotation , setRotation] = useState(0)
 
   const [colour, setColour] = useState("black")
+  const [destination, setDestination] = useState(null)
+  const navigate = useNavigate()
 
   const audioref = useRef(new Audio(omnitrix_audio))
   const transformaudioref = useRef(new Audio(omnitrix_transform))
+
+  useEffect(() => {
+    if (!destination) return
+
+    const timer = setTimeout(() => navigate(destination), 2000)
+    return () => clearTimeout(timer)
+  }, [destination, navigate])
   
   const playAudio = ()=>{
     audioref.current.play()
@@ -67,10 +73,15 @@ function Omnitrix({opvalue, setSize, size, setFlag, flag}) {
     transformAudio()
     setSize("300vh")
     setFlag(true)
-    if(colour == '#7bd71f') opvalue(1)
-    else if(colour == 'red') opvalue(2)
-    else if(colour == 'yellow') opvalue(3)
-    else if(colour == 'dodgerblue') opvalue(4)
+    const destinations = {
+      '#7bd71f': ['/skills', 1],
+      red: ['/projects', 2],
+      yellow: ['/certifications', 3],
+      dodgerblue: ['/contacts', 4],
+    }
+    const [path, page] = destinations[colour]
+    opvalue(page)
+    setDestination(path)
   }
 
 
