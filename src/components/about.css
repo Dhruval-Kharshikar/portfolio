@@ -19,6 +19,52 @@
     text-shadow: 0 0 45px rgb(0, 171, 0);
 }
 #intro-para{
+    .image{
+        float: left;
+        border: 2px solid lime;
+        width: 240px;
+        height: 280px;
+        margin: 0.2em 1.25em 0.75em 0;
+        shape-outside: margin-box;
+        overflow: hidden;
+        transition: all 0.5s ease;
+
+        img{
+            width: 250%;
+            object-fit: contain;
+            position: relative;
+            left: -10.5em;
+        }
+
+        .resume-tooltip{
+            position: fixed;
+            z-index: 10;
+            padding: 0.35em 0.65em;
+            border: 1px solid lime;
+            border-radius: 0.25em;
+            background: #101010;
+            color: lime;
+            font-size: 0.65em;
+            line-height: 1;
+            pointer-events: none;
+            white-space: nowrap;
+            opacity: 0;
+            transform: translate(0, 0);
+            transition: opacity 0.15s ease;
+        }
+    }
+
+    .image:hover{
+        .resume-tooltip{
+            opacity: 1;
+        }
+    }
+
+    .image:hover{
+        border-radius: 0.8em;
+        cursor: pointer;
+    }
+
     margin-top: 0.8em;
     width: 100%;
     white-space: pre-line;
@@ -27,14 +73,37 @@
     text-align: left;
     position: inherit;
     font-size: 1.6em;
+    line-height: 1.45;
     transition: all 0.4s ease;
+
+    > p{
+        margin: 0;       
+    }
+
+    &::after{
+        display: block;
+        clear: both;
+        content: '';
+    }
+}
+
+@media (max-width: 600px){
+    #intro-para{
+        padding: 1em;
+
+        .image{
+            width: 38%;
+            height: 220px;
+            margin-right: 1em;
+        }
+    }
 }
 .education{
     height: auto;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5em;
+    margin-top: 7em;
     text-align: center;
     position: relative;
 
@@ -259,4 +328,3 @@
         opacity: 1;
     }
 }
-

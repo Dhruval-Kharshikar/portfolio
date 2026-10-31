@@ -2,11 +2,13 @@ import React, { useRef, useState } from 'react'
 import './about.css'
 import beep from '../assets/typing_beep.mp3'
 import appear from '../assets/text-appear.wav'
+import face_portfolio from '../assets/face-portfolio.jpeg'
 
 function About() {
   const [fn, setFn] = useState(false)
   const [open, setOpen] = useState(false)
   const [hover, setHover] = useState(false)
+  const [tooltipPosition, setTooltipPosition] = useState({ x: 0, y: 0 })
   
   // 12th useStates
   
@@ -88,14 +90,35 @@ Right now, I’m learning the MERN stack and improving my SQL skills so I can bu
             }
           }>INTRODUCTION</h2>
 
-          <p id='intro-para' style={
+          <div id='intro-para' style={
             {
               opacity : fn?1:0,
               zIndex : fn?0:-1
             }
           }>
+            <div
+              className="image"
+              onMouseMove={(event) => {
+                setTooltipPosition({
+                  x: event.clientX + 16,
+                  y: event.clientY + 16
+                })
+              }}
+            >
+              <img src={face_portfolio} alt="" />
+              <span
+                className="resume-tooltip"
+                role="tooltip"
+                style={{
+                  left: tooltipPosition.x,
+                  top: tooltipPosition.y
+                }}
+              >
+                View resume
+              </span>
+            </div>
             <p>{finalText}</p>
-          </p>
+          </div>
 
         </div>
         <div className="education">
