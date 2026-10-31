@@ -110,6 +110,12 @@
     h2{
         color: lime;
         font-size: 10em;
+        text-shadow: 0 0 0.08em rgba(0, 255, 0, 0.25);
+        transition: text-shadow 0.6s ease;
+    }
+
+    h2:hover{
+        text-shadow: 0 0 0.18em rgba(0, 255, 0, 0.75);
     }
     .line{
         height: 0em;
@@ -117,10 +123,12 @@
         opacity: 0;
         border : 2px solid white;
         border-radius: 50%;
-        animation: heightline linear both;
+        box-shadow: 0 0 0.8em rgba(255, 255, 255, 0.75);
+        animation: heightline 1s cubic-bezier(0.22, 1, 0.36, 1) both;
         animation-timeline: view();
         animation-range: entry 0% cover 100% ;
         margin-bottom: 25em;
+        will-change: height, opacity;
     }
     .school-tenth{
         display: flex;
@@ -137,7 +145,8 @@
             height: 1.5rem;
             border-radius: 50% ;
             opacity: 0;
-            animation: faded-in linear both;
+            box-shadow: 0 0 0.45em white, 0 0 1.2em rgba(0, 255, 0, 0.8);
+            animation: faded-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
             animation-timeline: view();
             animation-range: entry 0% cover 30%;
         }
@@ -155,7 +164,7 @@
             cursor: pointer;    
             font-size: 1.2rem;
             
-            animation: appear-box linear both;
+            animation: appear-box 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
             animation-timeline: view() ;
             animation-range: entry 0% cover 30%;
             
@@ -198,7 +207,8 @@
             height: 1.5rem;
             border-radius: 50% ;
             opacity: 0;
-            animation: faded-in linear both;
+            box-shadow: 0 0 0.45em white, 0 0 1.2em rgba(0, 255, 0, 0.8);
+            animation: faded-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
             animation-timeline: view();
             animation-range: entry 0% cover 30%;
         }
@@ -216,7 +226,7 @@
             position: relative;
             cursor: pointer;    
 
-            animation: appear-box linear both;
+            animation: appear-box 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
             animation-timeline: view() ;
             animation-range: entry 0% cover 30%;
 
@@ -258,7 +268,8 @@
             height: 1.5rem;
             border-radius: 50% ;
             opacity: 0;
-            animation: faded-in linear both;
+            box-shadow: 0 0 0.45em white, 0 0 1.2em rgba(0, 255, 0, 0.8);
+            animation: faded-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
             animation-timeline: view();
             animation-range: entry 0% cover 30%;
         }
@@ -276,7 +287,7 @@
             position: relative;
             cursor: pointer;    
 
-            animation: appear-box linear both;
+            animation: appear-box 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
             animation-timeline: view() ;
             animation-range: entry 0% cover 30%;
 
@@ -302,29 +313,62 @@
             }
         }
     }
+
+    .circle-dot,
+    .twelve-dot,
+    .college-dot{
+        transition: transform 0.35s ease, box-shadow 0.35s ease;
+        will-change: transform;
+    }
+
+    .school-tenth:hover .circle-dot,
+    .school-twelth:hover .twelve-dot,
+    .college:hover .college-dot{
+        transform: scale(1.25);
+        box-shadow: 0 0 0.65em white, 0 0 1.7em lime;
+    }
     
 }
 
 @keyframes heightline{
+    0%{
+        opacity: 0;
+        height: 0;
+        transform: scaleY(0);
+        transform-origin: top;
+    }
+
     100%{
         opacity: 1;
         height : 50em;
-        width: 1px;
+        width : 1px;
+        transform: scaleY(1);
     }
 }
 
 @keyframes faded-in {
-    
+    0%{
+        opacity: 0;
+        transform: scale(0.4);
+    }
+
     100%{
         opacity: 1;
+        transform: scale(1);
     }
 }
 
 
 @keyframes appear-box {
-   
+    0%{
+        width: 0;
+        opacity: 0;
+        transform: translateY(0.8em);
+    }
+
     100%{
         width: 23em;
         opacity: 1;
+        transform: translateY(0);
     }
 }
