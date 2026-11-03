@@ -20,8 +20,6 @@ function About() {
   const [open1, setOpen1] = useState(false)
   const [hover1, setHover1] = useState(false)
 
-
-
   const introref = useRef(null)
 
   let txt = `I’m Dhruval Kharshikar, a Computer Science and Engineering student at Parul University. I enjoy learning new things, experimenting with ideas, and building things that actually work.
@@ -50,7 +48,6 @@ Right now, I’m learning the MERN stack and improving my SQL skills so I can bu
 
     function write(){
 
-
       if( i < txt.length && !fn){
         temp += txt.charAt(i)
         setFinalText(temp)
@@ -60,6 +57,10 @@ Right now, I’m learning the MERN stack and improving my SQL skills so I can bu
       }
     }
     write()
+  }
+
+  function openlink(){
+    window.open('https://drive.google.com/file/d/1qwqD2OwBnSqw8vPoE1GP-0gLUmD_lI3N/view?usp=drive_link', '_blank')
   }
 
   return (
@@ -96,8 +97,10 @@ Right now, I’m learning the MERN stack and improving my SQL skills so I can bu
               zIndex : fn?0:-1
             }
           }>
+            <div className="name-img"><p>click image to show resume</p></div>
             <div
               className="image"
+              onClick={openlink}
               onMouseMove={(event) => {
                 setTooltipPosition({
                   x: event.clientX + 16,

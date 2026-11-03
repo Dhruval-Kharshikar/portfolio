@@ -90,7 +90,6 @@ function Skills({ value, opv, setflag }) {
             <section className={`skill-group ${group.id}`} key={group.id}>
               <div className='group-heading'>
                 <div>
-                  <p>MODULE 0{groupIndex + 1}</p>
                   <h2>{group.title}</h2>
                 </div>
               </div>

@@ -11,7 +11,7 @@
 
 #introduction{
     cursor: pointer;
-    color: lime;
+    color: var(--home-green);
     font-size: 17em;
     transition: all 0.5s ease;
 }
@@ -19,9 +19,23 @@
     text-shadow: 0 0 45px rgb(0, 171, 0);
 }
 #intro-para{
+    .name-img{
+        padding: 0.3em 0.4em;
+        font-family: sans-serif;
+        font-size: 0.9rem;
+        letter-spacing: 0.1rem;
+        color: var(--home-green);
+        text-shadow: 0 0 10px;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        border: 2px solid var(--home-green);
+        width: 240px;
+    }
     .image{
+        position: relative;
         float: left;
-        border: 2px solid lime;
+        border: 2px solid var(--home-green);
         width: 240px;
         height: 280px;
         margin: 0.2em 1.25em 0.75em 0;
@@ -68,7 +82,7 @@
     margin-top: 0.8em;
     width: 100%;
     white-space: pre-line;
-    color: green;
+    color: rgb(172, 255, 150);
     padding: 1em 3em;
     text-align: left;
     position: inherit;
@@ -108,19 +122,31 @@
     position: relative;
 
     h2{
-        color: lime;
+        color: var(--home-green);
         font-size: 10em;
         text-shadow: 0 0 0.08em rgba(0, 255, 0, 0.25);
         transition: text-shadow 0.6s ease;
     }
 
-    h2:hover{
-        text-shadow: 0 0 0.18em rgba(0, 255, 0, 0.75);
+    h2::after{
+        display: block;
+        width: 5em;
+        height: 0.04em;
+        margin: 0em auto 0;
+        border-radius: 1em;
+        background: var(--home-green);
+        box-shadow: 0 0 0.8em var(--home-green);
+        content: '';
+        transform: scaleX(0.35);
+        transition: transform 0.5s ease;
     }
+
+    h2:hover::after{
+        transform: scaleX(1);
+    }
+
     .line{
-        height: 0em;
-        width: 0;
-        opacity: 0;
+        position: relative;
         border : 2px solid white;
         border-radius: 50%;
         box-shadow: 0 0 0.8em rgba(255, 255, 255, 0.75);
@@ -130,6 +156,46 @@
         margin-bottom: 25em;
         will-change: height, opacity;
     }
+
+    .line::before,
+    .line::after{
+        position: absolute;
+        left: 50%;
+        border: 1px solid rgba(157, 255, 50, 0.45);
+        border-radius: 50%;
+        content: '';
+        transform: translateX(-50%);
+    }
+
+    .line::before{
+        top: -0.75em;
+        width: 1.5em;
+        height: 1.5em;
+        background: var(--home-green);
+        box-shadow: 0 0 1.2em var(--home-green);
+    }
+
+    .line::after{
+        bottom: -0.75em;
+        width: 1.5em;
+        height: 1.5em;
+        background: black;
+        box-shadow: 0 0 1em rgba(157, 255, 50, 0.6);
+    }
+
+    .state-10,
+    .state-12,
+    .state-1st{
+        background:
+            linear-gradient(135deg, rgba(157, 255, 50, 0.12), transparent 35%),
+            rgba(3, 18, 7, 0.92);
+        box-shadow:
+            0 0.8em 2em rgba(0, 0, 0, 0.35),
+            inset 0 0 1.5em rgba(157, 255, 50, 0.04);
+        isolation: isolate;
+        will-change: width, height, transform;
+    }
+
     .school-tenth{
         display: flex;
         position: absolute;
@@ -186,9 +252,15 @@
                 left: 50%;
                 transform: translateX(-50%);
                 position: absolute;
-                background-color: lime;
-                z-index: -1;
+                background: linear-gradient(90deg, var(--home-green), green);
+                z-index: 0;
                 transition: all 0.4s ease;
+            }
+
+            h3,
+            p{
+                position: relative;
+                z-index: 1;
             }
         }
     }
@@ -247,9 +319,15 @@
                 left: 50%;
                 transform: translateX(-50%);
                 position: absolute;
-                background-color: lime;
-                z-index: -1;
+                background: linear-gradient(90deg, var(--home-green), green);
+                z-index: 0;
                 transition: all 0.4s ease;
+            }
+
+            h3,
+            p{
+                position: relative;
+                z-index: 1;
             }
         }
     }
@@ -307,9 +385,15 @@
                 left: 50%;
                 transform: translateX(-50%);
                 position: absolute;
-                background-color: lime;
-                z-index: -1;
+                background: linear-gradient(90deg, var(--home-green), green);
+                z-index: 0;
                 transition: all 0.4s ease;
+            }
+
+            h3,
+            p{
+                position: relative;
+                z-index: 1;
             }
         }
     }
@@ -328,6 +412,39 @@
         box-shadow: 0 0 0.65em white, 0 0 1.7em lime;
     }
     
+}
+
+@media (max-width: 700px){
+    .education{
+        margin-top: 4em;
+        min-height: 75em;
+    }
+
+    .education h2{
+        font-size: clamp(4rem, 18vw, 7rem);
+    }
+
+    .education .school-tenth,
+    .education .school-twelth,
+    .education .college{
+        left: 50%;
+        right: auto;
+        width: 94%;
+        justify-content: center;
+        transform: translateX(-50%);
+    }
+
+    .education .school-tenth{
+        top: 25%;
+    }
+
+    .education .school-twelth{
+        top: 44%;
+    }
+
+    .education .college{
+        top: 64%;
+    }
 }
 
 @keyframes heightline{

@@ -1,80 +1,126 @@
-body{
-    font-family: monospace;
-}
-.omnitrix-ring-wrap{
-    position: relative;
-    width: 100%;
-    height: 70vh;
-    .omn{
-        width: 34em;
-    }
-    .logo-wrap{
-        position: absolute;
-        img{
-            width: 7em;
-        }
-    }
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.omnitrix-img{
-    cursor: pointer;
-    z-index: 2;
-    img{
-        transition: 0.4s ease;
-    }
-    transition: 0.4s ease;
-}
-.circle{
-    border-radius: 50%;
-    
-    background-color: #7bd71f;
-    position: absolute;
-    z-index: -1;
-    transition: 0.7s all ease;
-    
-}
-@keyframes animate {
-    0%{
-        box-shadow: 0 0 0;
-    }
-    100%{
-        box-shadow: 0 0 400px white;
-    }
-}
-.button{
-    position: absolute;
-    top : 50%;
-    left: 70%;
-    button{
-        font-family: monospace;
-        transition: 0.3s ease ;
-        cursor: pointer;
-        padding: 4em 1em;
-        border-radius: 50%;
-        background-color: #7bd71f;
-        border: none;
-        font-weight: bold;
-        font-size: 0.7em;
-    }
-}
-.button > button:hover{
-    box-shadow: 0 0 30px #7bd71f;
+.omnitrix-ring-wrap {
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: min(70vh, 48em);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  isolation: isolate;
 }
 
-.logo-wrap{
-    position: relative;
-    div{
-        display : flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        transition: opacity 1s ease;
-    }
+.omnitrix-ring-wrap::before {
+  position: absolute;
+  width: 27em;
+  height: 27em;
+  border: 1px solid rgba(157, 255, 50, 0.28);
+  border-radius: 50%;
+  box-shadow: 0 0 3em rgba(157, 255, 50, 0.12), inset 0 0 3em rgba(157, 255, 50, 0.08);
+  content: '';
+  animation: ring-breathe 4s ease-in-out infinite;
+}
+
+.omnitrix-img {
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+  transition: filter 0.45s ease, transform 0.45s ease;
+}
+
+.omnitrix-img:hover { 
+  transform: scale(1.035);
+}
+
+.omnitrix-img img {
+  display: block;
+  width: min(34em, 70vw);
+  transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.circle {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  background-color: black;
+  /* filter: blur(0.1em); */
+  transition: width 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 0.45s ease, box-shadow 0.7s ease;
+}
+
+.logo-wrap {
+  z-index: 3;
+}
+
+.logo-wrap > div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  width: 12em;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.logo-wrap img {
+  width: 4.5em;
+}
+
+.logo-wrap h1 {
+  margin: 0.35em 0 0;
+  color: black;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.button {
+  position: absolute;
+  top: 54%;
+  left: calc(50% + min(20em, 28vw));
+  z-index: 4;
+}
+
+.button > button {
+  padding: 1.4em 1.2em;
+  border: 1px solid var(--home-green);
+  border-radius: 50%;
+  cursor: pointer;
+  background: rgba(157, 255, 50, 0.92);
+  color: #031a06;
+  font-family: monospace;
+  font-size: 0.75rem;
+  font-weight: bold;
+  box-shadow: 0 0 1em rgba(157, 255, 50, 0.7);
+  transition:  opacity 1s ease, box-shadow 0.3s ease, filter 0.3s ease, transform 0.3s ease;
+}
+
+.button > button:hover {
+  filter: brightness(1.15);
+  box-shadow: 0 0 2em var(--home-green);
+  transform: scale(1.08) rotate(-4deg);
+}
+
+@keyframes ring-breathe {
+  50% { opacity: 0.5; transform: scale(1.06); }
+}
+
+@media (max-width: 700px) {
+  .omnitrix-ring-wrap {
+    height: 55vh;
+  }
+
+  .omnitrix-ring-wrap::before {
+    width: 19em;
+    height: 19em;
+  }
+
+  .button {
+    top: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
