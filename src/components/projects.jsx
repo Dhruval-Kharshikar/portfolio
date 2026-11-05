@@ -14,14 +14,14 @@ function Projects( {value, opv, setflag}) {
   const projects = [
     {
       img : '',
-      name : 'Project 1',
-      description : 'dummy description about the project',
-      stack : 'html, css, javaScript',
+      name : 'Employee Management App',
+      description : 'I made this app using Node JS and react from which user can login and access data from the database of MongoDB.',
+      stack : 'React, Node JS, Express JS, MongoDB',
       link : 'https://monkeytype.com/account'
     },
     {
       img : '',
-      name : 'Project 1',
+      name : 'Project 2',
       description : 'dummy description about the project',
       stack : 'html, css, javaScript',
       link : 'https://monkeytype.com/account'
@@ -33,7 +33,7 @@ function Projects( {value, opv, setflag}) {
     <div className='projects'>
       <div className="pr-heading">
         <span>Projects</span>
-        <button className='btn' onClick={clickf}>back to the home</button>
+        <button className='btn' onClick={clickf}>back to home</button>
       </div>
 
       <main className='main-body-pr'>
@@ -45,8 +45,9 @@ function Projects( {value, opv, setflag}) {
         </div>
 
         <div className='console-parent'>
-          <h1>My Projects</h1>
+          <p>My Projects</p>
           <div className="project-console">
+
             {projects.map((project) => (
               <div className="project-group">
               <div className='project-left'>
@@ -58,14 +59,12 @@ function Projects( {value, opv, setflag}) {
               <div className='project-right'>
                 <div className="project-description">{project.description}</div>
                 <div>
-                  <div className="project-stack">{project.stack}</div>
+                  <div className="project-stack"><span>Stack : </span>{project.stack}</div>
                   <div className="project-link"><a href={project.link} target="_blank"> view more</a></div>
                 </div>
               </div>
             </div>
             ))}
-
-            
 
           </div>
         </div>
