@@ -41,6 +41,10 @@ const skillGroups = [
 
       {name : 'DBMS', level : 'Database Management with SQL and MongoDB', symbol : dbms},
 
+      {name : 'NodeJS', level : 'Framework of javascript for DOM'},
+      {name : 'React', level : 'Frontend Framework for web development'},
+      {name : 'Express', level : 'Framework for backend and db connectivtiy '},
+
     ]
   },
   {
@@ -80,13 +84,13 @@ function Skills({ value, opv, setflag }) {
         <div className='sk-intro'>
           <h1>Learn about the <span>skills</span> behind my <span>builds.</span></h1>
           <p className='sk-summary'>
-            A Computer Science and Engineering student focused on problem solving,
-            web development, and turning ideas into useful experiences.
+            Explore the programming, technical, and soft skills I use to build
+            thoughtful and effective digital experiences.
           </p>
         </div>
 
         <div className='skills-console'>
-          {skillGroups.map((group, groupIndex) => (
+          {skillGroups.map((group) => (
             <section className={`skill-group ${group.id}`} key={group.id}>
               <div className='group-heading'>
                 <div>
