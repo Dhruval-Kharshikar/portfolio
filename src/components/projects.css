@@ -116,7 +116,7 @@
     position: relative;
     border: 2px solid rgb(92, 11, 11) ;
     background-color: #350505;
-    border-radius: 1em;
+    border-radius: 0.5em;
     padding: 1.5em;
     display: flex;
     flex-direction: column;
@@ -146,8 +146,8 @@
 .project-img{
     margin:0.2em;
     margin-bottom: 1em;
-    border-radius: 1em;
-    border: 1px solid rgb(106, 106, 106);
+    border-radius: 0.5em;
+    border: 2px solid rgb(92, 11, 11);
     background-color: rgb(25, 14, 14);
     aspect-ratio: 16/9;
 }
