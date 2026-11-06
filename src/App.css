@@ -118,36 +118,6 @@ body {
   animation: page-in 0.65s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
-.app-loader {
-  position: relative;
-  width: 100vw;
-  height: 100vh;
-  background: var(--home-dark);
-}
-
-.app-loader .loader-img {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 50px;
-  height: 100px;
-  transform: translate(-50%, -50%);
-}
-
-.app-loader .loader-img img {
-  width: 100%;
-  border-radius: 50%;
-  box-shadow: 0 0 50px var(--home-green);
-  animation: loader-spin 1s linear 3;
-}
-
-.background-image {
-  position: absolute;
-  top: 250%;
-  z-index: -1;
-  width: 100vw;
-}
-
 @keyframes home-intro {
   from { opacity: 0; transform: translateY(-1.5em); }
   to { opacity: 1; transform: translateY(0); }
@@ -156,10 +126,6 @@ body {
 @keyframes page-in {
   from { opacity: 0; transform: scale(0.98) translateY(1em); }
   to { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-@keyframes loader-spin {
-  to { rotate: 360deg; }
 }
 
 @media (max-width: 600px) {
