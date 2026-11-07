@@ -175,6 +175,7 @@
         grid-template-columns: repeat(3, 1fr);
 
         .cert-skill{
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -186,13 +187,27 @@
             text-align: center;
             color: rgb(255, 255, 94);
             border-radius: 0.5em;
+            overflow: hidden;
             transition: all 0.4s ease;
+        }
+
+        .cert-skill::before{
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(110deg, transparent 20%, rgba(252, 255, 50, 0.317), transparent 80%);
+            transform: translateX(-120%);
+            transition: transform 0.5s ease;
         }
 
         .cert-skill:hover{
             color: #302908;
             border: 1px solid yellow;
             background-color: #9f900b;
+        }
+
+        .cert-skill:hover::before{
+            transform: translateX(120%);
         }
     }
 }
