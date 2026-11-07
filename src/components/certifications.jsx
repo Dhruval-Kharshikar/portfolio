@@ -20,7 +20,15 @@ function Certifications({value, opv, setflag}) {
       org : "certiport",
       date : "mar 2025",
       skills : ['HTML','Semantic tags', 'CSS', 'Flexbox', 'Grid', 'Box Model', 'Layout'],
-      project : "dummy link",
+      project : "",
+      view : ""
+    },
+    {
+      title : "AZ-900 Microsoft Azure course",
+      org : "certiport",
+      date : "apr 2025",
+      skills : ['JavaScript', 'ES6+ syntax', 'DOM', 'Scripting', 'Problem solving'],
+      project : "",
       view : ""
     },
     {
@@ -28,7 +36,7 @@ function Certifications({value, opv, setflag}) {
       org : "certiport",
       date : "may 2025",
       skills : ['JavaScript', 'ES6+ syntax', 'DOM', 'Scripting', 'Problem solving'],
-      project : "dummy link",
+      project : "",
       view : ""
     },
     {
@@ -52,7 +60,7 @@ function Certifications({value, opv, setflag}) {
       org : "NPTEL",
       date : "apr 2026",
       skills : ['OSI Model', 'TCP/IP Stack', 'IP Addressing', 'Subnetting', 'Routing Protoco'],
-      project : "dummy",
+      project : "",
       view : ""
     },
     {
