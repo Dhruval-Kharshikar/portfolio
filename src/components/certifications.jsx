@@ -16,9 +16,25 @@ function Certifications({value, opv, setflag}) {
 
   const certificates = [
     {
+      title : "HTML & CSS Specialist",
+      org : "certiport",
+      date : "mar 2025",
+      skills : ['HTML','Semantic tags', 'CSS', 'Flexbox', 'Grid', 'Box Model', 'Layout'],
+      project : "dummy link",
+      view : ""
+    },
+    {
+      title : "JS Specialist",
+      org : "certiport",
+      date : "may 2025",
+      skills : ['JavaScript', 'ES6+ syntax', 'DOM', 'Scripting', 'Problem solving'],
+      project : "dummy link",
+      view : ""
+    },
+    {
       title : "Web Development Internship",
       org : "myJobGrow",
-      date : "feb 2025 - mar 2025",
+      date : "jul 2025 - sep 2025",
       skills : ['HTML', 'CSS', 'JavaScript', 'React', 'Node JS', 'Express JS', 'Mongo DB'],
       project : "dummy",
       view : ""
@@ -26,24 +42,32 @@ function Certifications({value, opv, setflag}) {
     {
       title : "Python Course Completion",
       org : "IBM",
-      date : "aug 2025",
-      skills : ['Python', 'Pandas', 'Numpy', 'Django', 'Flask', 'Fast API'],
+      date : "jan 2026",
+      skills : ['Python', 'Pandas', 'Numpy', 'Data Structures', 'OOP', 'File handling', 'Problem Solving'],
       project : "",
       view : ""
     },
     {
-      title : "HTML & CSS Specialist",
-      org : "certiport",
-      date : "jan 2025",
-      skills : ['HTML','Semantic', 'CSS', 'flexbox', 'grid', 'Box model', 'layout'],
+      title : "Computer Networks Course Completion",
+      org : "NPTEL",
+      date : "apr 2026",
+      skills : ['OSI Model', 'TCP/IP Stack', 'IP Addressing', 'Subnetting', 'Routing Protoco'],
+      project : "dummy",
+      view : ""
+    },
+    {
+      title : "Hackathon Participation",
+      org : "Parul University",
+      date : "may 2026",
+      skills : ['Git/GitHub', 'Presentation', 'Teamwork', 'Development', 'Ideation'],
       project : "dummy link",
       view : ""
     },
     {
-      title : "Certificate 1",
-      org : "company-name",
-      date : "dd/mm/yyyy",
-      skills : ['HTML', 'CSS', 'JavaScript', 'React'],
+      title : "Web Development Internship",
+      org : "Skill Orbit",
+      date : "july 2026",
+      skills : ['HTML', 'CSS', 'JavaScript', 'React', 'Node JS', 'Express JS', 'Mongo DB'],
       project : "dummy link",
       view : ""
     }
