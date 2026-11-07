@@ -65,14 +65,13 @@ function Certifications({value, opv, setflag}) {
     },
     {
       title : "Web Development Internship",
-      org : "Skill Orbit",
-      date : "july 2026",
+      org : "SkillOrbit",
+      date : "may 2026 - jul 2026",
       skills : ['HTML', 'CSS', 'JavaScript', 'React', 'Node JS', 'Express JS', 'Mongo DB'],
       project : "dummy link",
       view : ""
     }
   ]
-
 
   return (
     <div className='cert-body'>
@@ -90,7 +89,7 @@ function Certifications({value, opv, setflag}) {
         </div>
 
         <div className="cert-console">
-          <h1>Certificates</h1>
+          <h1 id='certificate'>Certificates</h1>
 
           <div className='certificate-card-par'>
             {certificates.map((certificate)=>(
@@ -120,8 +119,7 @@ function Certifications({value, opv, setflag}) {
               </div>
             ))}
           </div>
-        </div>  
-
+        </div> 
       </main>
     </div>
   )
