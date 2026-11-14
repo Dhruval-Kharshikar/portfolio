@@ -1,6 +1,7 @@
 import React from 'react'
 import './contacts.css'
-
+import email from '../assets/email_logo.png'
+import location from '../assets/location.png'
 function Contacts({ value, opv, setflag }) {
 
   function clickf() {
@@ -41,12 +42,18 @@ function Contacts({ value, opv, setflag }) {
             </div>
             <div className="contact-links-1">
               <div className="email">
-                <p id='heading'>Email</p>
-                <a href="">dhruval.kharshikar1@gmail.com</a>
+                <img src={email} alt="" />
+                <div>
+                  <p id='heading'>Email</p>
+                  <a href="">dhruval.kharshikar1@gmail.com</a>
+                </div>
               </div>
               <div className="location">
-                <p id='heading'>Location</p>
-                <a href="">Vadodara, Gujarat</a>
+                <img src={location} alt="" />
+                <div>
+                  <p id='heading'>Location</p>
+                  <a href="">Vadodara, Gujarat</a>
+                </div>
               </div>
             </div>
             <div className="contact-links-2">
