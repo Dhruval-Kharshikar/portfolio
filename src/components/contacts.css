@@ -143,6 +143,9 @@
         font-size: 1rem;
         text-decoration: none;
     }
+    a:hover{
+        color: yellow;
+    }
 }
 .location{
     display: flex;
@@ -161,9 +164,12 @@
         font-size: 1rem;
         text-decoration: none;
     }
+    a:hover{
+        color: yellow;
+    }
 }
 .contact-links-2{
-    margin-top: 2em;
+    margin-top: 4em;
     p{
         font-size: 1rem;
         letter-spacing: 0.15em;
@@ -174,11 +180,24 @@
         display: flex;
         gap: 2em;
         a{
+            background-color: transparent;
             .comp{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    padding: 0.2em;
+                    width:100%;
+                }
+
                 border-radius: 0.5em;
-                width: 30px;
-                height: 30px;
-                border: 2px solid white;
+                width: 50px;
+                height: 50px;
+                background-color: white;
+                transition: 0.4s all ease;
+            }
+            .comp:hover{
+                box-shadow: 0 0 1em #00aeff;
             }
         }
     }
@@ -204,7 +223,7 @@
 .message-table{
     box-sizing: border-box;
     padding: 1.5em 0.25em 0.25em;
-    margin-top: 1em;
+    margin-top: 3em;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.25em;
@@ -242,7 +261,7 @@
 }
 
 .message-table textarea{
-    min-height: 9em;
+    min-height: 12em;
     padding: 0.8em 0.85em;
     resize: vertical;
 }

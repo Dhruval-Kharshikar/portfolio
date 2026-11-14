@@ -2,6 +2,7 @@ import React from 'react'
 import './contacts.css'
 import email from '../assets/email_logo.png'
 import location from '../assets/location.png'
+import github from '../assets/github-logo.png'
 function Contacts({ value, opv, setflag }) {
 
   function clickf() {
@@ -57,17 +58,28 @@ function Contacts({ value, opv, setflag }) {
               </div>
             </div>
             <div className="contact-links-2">
-              <p>Follow as</p>
+              <p>Follow me on</p>
               <div className="links-2">
                 <div className="link">
-                  <a href="">
-                    <div className="comp"></div>
+                  <a href="https://github.com/dhruval-kharshikar" target='_blank'>
+                    <div className="comp">
+                      <img src={github} alt="" />
+                    </div>
                   </a>
-                  <a href="">
-                    <div className="comp"></div>
+                  <a href="https://leetcode.com/u/Dhruval_Kharshikar/" target='_blank'>
+                    <div className="comp">
+                      <img src="https://upload.wikimedia.org/wikipedia/commons/1/19/LeetCode_logo_black.png?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=thumbnail_unscaled&_=20191202080835" alt="" />
+                    </div>
                   </a>
-                  <a href="">
-                    <div className="comp"></div>
+                  <a href="https://www.linkedin.com/in/dhruval-kharshikar-364574349/" target='_blank'>
+                    <div className="comp">
+                      <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/96/Linkedin-logo-blue-In-square-40px.svg/960px-Linkedin-logo-blue-In-square-40px.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="" />
+                    </div>
+                  </a>
+                  <a href="https://app.netlify.com/teams/dhruval-kharshikar/projects" target='_blank'>
+                    <div className="comp">
+                      <img src="https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Netlify_logo_%282%29.svg/960px-Netlify_logo_%282%29.svg.png?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail" alt="" />
+                    </div>
                   </a>
                 </div>
               </div>
@@ -75,25 +87,30 @@ function Contacts({ value, opv, setflag }) {
           </div>
           <div className="contact-right">
             <h1>Send a Message</h1>
-            <div className="message-table">
-              <div className="contact-name">
-                <p>Your name</p>
-                <input type="text" name="" id="" />
+            <form action="https://splitforms.com/api/submit" method="POST">
+              <input type="hidden" name="access_key" value="39c32820e4cb48ba984f73dd1515a085" />
+              <input type="hidden" name="subject" value="New contact form submission" />
+              <div className="message-table">
+                <div className="contact-name">
+                  <p>Your name</p>
+                  <input type="text" name="name" id="name" required />
+                </div>
+                <div className="contact-address">
+                  <p>email address</p>
+                  <input type="email" name="email" id="email" required />
+                </div>
+                <div className="contact-subject">
+                  <p>subject</p>
+                  <input type="text" name="topic" id="topic" required />
+                </div>
+                <div className="contact-message">
+                  <p>message</p>
+                  <textarea name="message" id="message" required></textarea>
+                </div>
+                <input type="checkbox" name="botcheck" style={{ display: 'none' }} tabIndex="-1" autoComplete="off" />
+                <button id='submit' type='submit'>Send Message</button>
               </div>
-              <div className="contact-address">
-                <p>email address</p>
-                <input type="email" name="" id="" />
-              </div>
-              <div className="contact-subject">
-                <p>subject</p>
-                <input type="text" name="" id="" />
-              </div>
-              <div className="contact-message">
-                <p>message</p>
-                <textarea name="" id=""></textarea>
-              </div>
-              <button id='submit'>Send Message</button>
-            </div>
+            </form>
           </div>
         </div>
       </main>
