@@ -150,6 +150,11 @@
     border: 2px solid rgb(92, 11, 11);
     background-color: rgb(25, 14, 14);
     aspect-ratio: 16/9;
+    overflow: hidden;
+
+    img{
+        width: 100%;
+    }
 }
 .project-right{
     margin: 0em 0.6em;

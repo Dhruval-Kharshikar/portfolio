@@ -1,6 +1,11 @@
 import React from 'react'
 import './projects.css'
 import Footer from './footer'
+import pr1 from '../assets/projects/pr1.png'
+import pr2 from '../assets/projects/pr2.png'
+import pr3 from '../assets/projects/pr3.png'
+import pr4 from '../assets/projects/pr4.png'
+import pr5 from '../assets/projects/pr5.png'
 
 function Projects( {value, opv, setflag}) {
 
@@ -14,18 +19,39 @@ function Projects( {value, opv, setflag}) {
 
   const projects = [
     {
-      img : '',
-      name : 'Employee Management App',
+      img : pr1,
+      name : 'QuickScorer App',
       description : 'I made this app using Node JS and react from which user can login and access data from the database of MongoDB.',
       stack : 'React, Node JS, Express JS, MongoDB',
-      link : 'https://monkeytype.com/account'
+      link : 'https://quickscore-web.netlify.app/'
     },
     {
-      img : '',
-      name : 'Project 2',
-      description : 'dummy description about the project',
+      img : pr3,
+      name : 'Event Hoster',
+      description : 'EventHoster helps user to find the nearby events organised in their city and also lets organisers host their event',
+      stack : 'html, css, javaScript, NodeJS, ExpressJS, MongoDB',
+      link : 'https://event-hoster.netlify.app/'
+    },
+    {
+      img : pr2,
+      name : 'Notes Tracker app',
+      description : 'A website for organising notes with CRUD operations',
       stack : 'html, css, javaScript',
-      link : 'https://monkeytype.com/account'
+      link : 'https://notes-tracker-project.netlify.app/'
+    },
+    {
+      img : pr5,
+      name : 'BookMyShow Clone',
+      description : 'BookMyShow Clone created using only HTML and CSS clearifying my concepts about basic CSS and flexbox',
+      stack : 'html, css',
+      link : 'https://bokmyshow-web.netlify.app/'
+    },
+    {
+      img : pr4,
+      name : 'AdminLTE Dashboard',
+      description : 'I made this Dashboard clone using flexbox and grid, with only css (no javaScript)',
+      stack : 'html, css',
+      link : 'https://event-hoster.netlify.app/'
     }
   ]
 
