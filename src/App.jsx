@@ -6,6 +6,7 @@ import Projects from './components/projects'
 import Skills from './components/skills'
 import Certifications from './components/certifications'
 import Contacts from './components/contacts'
+import Footer from './components/footer'
 
 function App() {
 
@@ -48,6 +49,7 @@ function App() {
         <About />
 
       </div>
+      <Footer opv={setOpv} currentPage={opv} />
     </>
   )
 }

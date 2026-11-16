@@ -1,5 +1,6 @@
 import React from 'react'
 import './skills.css'
+import Footer from './footer'
 import { Navigate, useNavigate } from 'react-router-dom'
 import oops from '../assets/oops.png'
 import teamwork from '../assets/teamwork.png'
@@ -120,6 +121,7 @@ function Skills({ value, opv, setflag }) {
           <p>For Projects, click here</p>
         </div>
       </main>
+      <Footer opv={opv} currentPage={1} />
     </div>
   )
 }

@@ -3,6 +3,7 @@ import './contacts.css'
 import email from '../assets/email_logo.png'
 import location from '../assets/location.png'
 import github from '../assets/github-logo.png'
+import Footer from './footer'
 function Contacts({ value, opv, setflag }) {
 
   function clickf() {
@@ -114,6 +115,7 @@ function Contacts({ value, opv, setflag }) {
           </div>
         </div>
       </main>
+      <Footer opv={opv} currentPage={4} />
     </div>
   )
 }

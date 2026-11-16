@@ -1,5 +1,6 @@
 import React from 'react'
 import './projects.css'
+import Footer from './footer'
 
 function Projects( {value, opv, setflag}) {
 
@@ -69,6 +70,7 @@ function Projects( {value, opv, setflag}) {
           </div>
         </div>
       </main>
+      <Footer opv={opv} currentPage={2} />
     </div>
   )
 }

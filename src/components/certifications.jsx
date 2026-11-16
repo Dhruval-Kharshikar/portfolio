@@ -1,6 +1,7 @@
 import React from 'react'
 import './certifications.css'
 import { useNavigate } from 'react-router-dom';
+import Footer from './footer'
 
 function Certifications({value, opv, setflag}) {
 
@@ -127,8 +128,9 @@ function Certifications({value, opv, setflag}) {
               </div>
             ))}
           </div>
-        </div> 
+        </div>
       </main>
+      <Footer opv={opv} currentPage={3} />
     </div>
   )
 }
