@@ -1,9 +1,19 @@
 import './footer.css'
 import { useNavigate } from 'react-router-dom'
 
-function Footer({ opv }) {
+function Footer({ opv, currentPage = 0 }) {
 
     const navigate = useNavigate();
+
+  const palettes = {
+    0: { accent: '#9dff32', glow: 'rgba(116, 255, 31, 0.12)', border: 'rgba(157, 255, 50, 0.35)', background: '#021a06' },
+    1: { accent: '#9dff32', glow: 'rgba(116, 255, 31, 0.12)', border: 'rgba(157, 255, 50, 0.35)', background: '#021a06' },
+    2: { accent: '#ff4f4f', glow: 'rgba(255, 79, 79, 0.14)', border: 'rgba(255, 79, 79, 0.4)', background: '#180202' },
+    3: { accent: '#ffd166', glow: 'rgba(255, 209, 102, 0.14)', border: 'rgba(255, 209, 102, 0.4)', background: '#211704' },
+    4: { accent: '#65d9ff', glow: 'rgba(101, 217, 255, 0.14)', border: 'rgba(101, 217, 255, 0.4)', background: '#031b27' },
+  }
+
+  const palette = palettes[currentPage] || palettes[0]
 
   const links = [
     { label: 'Home', value: '', className: 'Home-link' },
@@ -14,7 +24,15 @@ function Footer({ opv }) {
   ]
 
   return (
-    <footer className="footer-parent">
+    <footer
+      className="footer-parent"
+      style={{
+        '--footer-accent': palette.accent,
+        '--footer-glow': palette.glow,
+        '--footer-border': palette.border,
+        '--footer-background': palette.background,
+      }}
+    >
       <div className="footer-content">
         <div className="footer-grid">
           <div className="footer-intro">

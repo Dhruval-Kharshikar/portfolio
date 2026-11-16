@@ -1,12 +1,15 @@
 .footer-parent {
-  --footer-green: #9dff32;
+  --footer-accent: #9dff32;
+  --footer-glow: rgba(116, 255, 31, 0.12);
+  --footer-border: rgba(157, 255, 50, 0.35);
+  --footer-background: #021a06;
   position: relative;
   z-index: 1;
   padding: 4.5em 1.5em 2em;
-  border-top: 1px solid rgba(157, 255, 50, 0.35);
+  border-top: 1px solid var(--footer-border);
   background:
-    radial-gradient(circle at 50% 0, rgba(116, 255, 31, 0.12), transparent 22em),
-    #021a06;
+    radial-gradient(circle at 50% 0, var(--footer-glow), transparent 22em),
+    var(--footer-background);
   color: #f4ffe9;
   font-family: monospace;
 }
@@ -26,11 +29,11 @@
 .footer-intro h2 {
   max-width: 16em;
   margin: 0.35em 0 0.8em;
-  color: var(--footer-green);
+  color: var(--footer-accent);
   font-family: sans-serif;
   font-size: clamp(1.7rem, 3vw, 2.8rem);
   line-height: 1;
-  text-shadow: 0 0 0.35em rgba(157, 255, 50, 0.35);
+  text-shadow: 0 0 0.35em var(--footer-glow);
 }
 
 .footer-intro > p:last-child {
@@ -42,7 +45,7 @@
 
 .footer-kicker {
   margin: 0;
-  color: rgba(157, 255, 50, 0.7);
+  color: color-mix(in srgb, var(--footer-accent) 70%, transparent);
   font-size: 0.75rem;
   letter-spacing: 0.18em;
 }
@@ -55,7 +58,7 @@
 
 .footer-label {
   margin: 0 0 1.25em;
-  color: rgba(157, 255, 50, 0.7);
+  color: color-mix(in srgb, var(--footer-accent) 70%, transparent);
   font-size: 0.8rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -127,9 +130,9 @@
 
 .footer-connect a:hover,
 .footer-connect a:focus-visible {
-  color: var(--footer-green);
+  color: var(--footer-accent);
   outline: none;
-  text-shadow: 0 0 0.7em rgba(157, 255, 50, 0.65);
+  text-shadow: 0 0 0.7em var(--footer-glow);
 }
 
 .footer-bottom {
@@ -137,7 +140,7 @@
   justify-content: space-between;
   gap: 1em;
   padding-top: 1.5em;
-  border-top: 1px solid rgba(157, 255, 50, 0.2);
+  border-top: 1px solid var(--footer-border);
 }
 
 .footer-copy {
