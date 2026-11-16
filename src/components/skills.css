@@ -186,32 +186,6 @@
 }
 
 
-.skill-visual-placeholder {
-    height: 100px;
-    background-color: #062d0c;
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 5em;
-    cursor: pointer;
-    position: relative;
-    display: grid;
-    margin-top: 1em;
-    place-items: center;
-    align-content: center;
-    overflow: hidden;
-    border: 1px solid rgba(157, 255, 50, 0.6);
-    border-radius: 0.5em;
-    color: var(--green);
-    text-align: center;
-    transition: all 0.5s ease;
-}
-.skill-visual-placeholder:hover{
-    background-color: rgb(73, 4, 4);
-    border-color: rgb(255, 79, 79);
-    color: red;
-}
-
-
 
 @keyframes scan-in {
     from { opacity: 0; transform: translateY(2em); }

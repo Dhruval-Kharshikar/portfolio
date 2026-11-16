@@ -116,10 +116,6 @@ function Skills({ value, opv, setflag }) {
             </section>
           ))}
         </div>
-
-        <div className='skill-visual-placeholder' onClick={()=>{navigate('/projects'); window.scrollTo(0,0)}}>
-          <p>For Projects, click here</p>
-        </div>
       </main>
       <Footer opv={opv} currentPage={1} />
     </div>
